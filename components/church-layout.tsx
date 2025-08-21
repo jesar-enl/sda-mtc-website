@@ -32,12 +32,12 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Top Navigation Bar */}
-      <header className="bg-cyan-700 dark:bg-gray-900 shadow-md border-b">
+      <header className="fixed top-0 left-0 w-full z-50 bg-cyan-700/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo and Church Name */}
             <div className="flex items-center space-x-3">
-              <img src="/adventist-symbol--white.png" alt="SDA Logo" className="h-10 w-10" />
+              <img src="/adventist-symbol--white.png" alt="SDA Logo" className="h-12 w-12 lg:h-14 lg:w-14" />
               
             </div>
 
@@ -48,7 +48,7 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800",
+                    "px-3 py-2 text-lg font-medium rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800",
                     pathname === item.href
                       ? "text-[#36747D] bg-gray-100 dark:bg-gray-800"
                       : "text-gray-700 dark:text-gray-300",
@@ -99,7 +99,7 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
       </header>
 
       {/* Main Layout */}
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen pt-16">
         {/* Main Content Area (6/7 width) */}
         <main className="flex-1 lg:w-6/7">
           {children}
