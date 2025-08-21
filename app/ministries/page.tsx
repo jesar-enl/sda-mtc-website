@@ -11,7 +11,7 @@ export default function MinistriesPage() {
       description:
         "Empowering young people to grow in faith, develop leadership skills, and make a positive impact in their communities through Bible study, fellowship, and service projects.",
       icon: Users,
-      leader: "Pastor Sarah Nambi",
+      leader: "M.G. Jesse Kyambadde",
       meetingTime: "Sabbath 2:00 PM",
       ageGroup: "Ages 13-30",
       activities: ["Bible Study", "Community Service", "Youth Camps", "Leadership Training"],
@@ -24,8 +24,8 @@ export default function MinistriesPage() {
       description:
         "Creating a nurturing environment where children can learn about God's love through age-appropriate Bible stories, songs, crafts, and interactive activities.",
       icon: Baby,
-      leader: "Sister Grace Nakato",
-      meetingTime: "Sabbath 10:00 AM",
+      leader: "Mrs. Joy B. Baluku",
+      meetingTime: "Sabbath 09:30 AM",
       ageGroup: "Ages 0-12",
       activities: ["Sabbath School", "Children's Church", "VBS", "Story Time"],
       image: "/ministry-children.png",
@@ -37,7 +37,7 @@ export default function MinistriesPage() {
       description:
         "Supporting women in their spiritual journey through fellowship, Bible study, prayer, and practical life skills while encouraging them to use their gifts in service.",
       icon: Heart,
-      leader: "Sister Mary Namusoke",
+      leader: "M.G. Evelyn Jumba",
       meetingTime: "First Sabbath 3:00 PM",
       ageGroup: "Adult Women",
       activities: ["Bible Study", "Prayer Groups", "Health Seminars", "Community Outreach"],
@@ -50,7 +50,7 @@ export default function MinistriesPage() {
       description:
         "Encouraging men to be spiritual leaders in their homes and communities through Bible study, mentorship, and practical service opportunities.",
       icon: UserCheck,
-      leader: "Brother Paul Ssekandi",
+      leader: "Eld. James Mukiibi",
       meetingTime: "Second Sabbath 3:00 PM",
       ageGroup: "Adult Men",
       activities: ["Men's Breakfast", "Bible Study", "Community Projects", "Mentorship"],
@@ -63,7 +63,7 @@ export default function MinistriesPage() {
       description:
         "Leading the congregation in worship through inspiring music, developing musical talents, and using the gift of music to glorify God and touch hearts.",
       icon: Music,
-      leader: "Brother James Kiwanuka",
+      leader: "M.G. Jesse Kyambadde",
       meetingTime: "Wednesday 6:00 PM",
       ageGroup: "All Ages",
       activities: ["Choir Practice", "Instrumental Training", "Worship Leading", "Special Music"],
@@ -89,7 +89,7 @@ export default function MinistriesPage() {
       description:
         "Developing character and leadership in young people through outdoor activities, skill building, community service, and spiritual growth programs.",
       icon: TreePine,
-      leader: "Elder David Ssemakula",
+      leader: "Elder Isaac Musinguzi",
       meetingTime: "Sunday 2:00 PM",
       ageGroup: "Ages 10-15",
       activities: ["Camping", "Honor Classes", "Community Service", "Leadership Training"],
@@ -114,7 +114,7 @@ export default function MinistriesPage() {
   return (
     <div className="lg:pr-[14.28%]">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-[#36747D] to-[#2a5a61] text-white">
+      <section className="relative py-20 px-4 bg-gradient-to-bl from-emerald-400 to-emerald-500 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Ministries</h1>
           <p className="text-xl opacity-90">
@@ -154,7 +154,7 @@ export default function MinistriesPage() {
 
                   <CardHeader>
                     <CardTitle className="text-xl flex items-center gap-2">
-                      <IconComponent className="h-5 w-5 text-[#36747D]" />
+                      <IconComponent className="h-5 w-5 text-emerald-400" />
                       {ministry.name}
                     </CardTitle>
                     <CardDescription className="line-clamp-3">{ministry.description}</CardDescription>
@@ -184,7 +184,7 @@ export default function MinistriesPage() {
                         </div>
                       </div>
 
-                      <Button className="w-full bg-[#36747D] hover:bg-[#2a5a61]">Learn More</Button>
+                      <Button className="w-full bg-emerald-400 hover:bg-emerald-500">Learn More</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -203,7 +203,7 @@ export default function MinistriesPage() {
             Contact us to learn more about how you can get involved.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#36747D] hover:bg-[#2a5a61]">
+            <Button size="lg" className="bg-emerald-400 hover:bg-emerald-500">
               Contact Ministry Leaders
             </Button>
             <Button size="lg" variant="outline">
