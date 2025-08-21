@@ -141,7 +141,7 @@ function Footer() {
           {/* Church Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/sda-logo-white.png" alt="SDA Logo" className="h-12 w-12" />
+              <img src="/adventist-symbol--white.png" alt="SDA Logo" className="h-12 w-12" />
               <div>
                 <h3 className="text-xl font-bold">Masaka Town SDA Church</h3>
                 <p className="text-gray-300 text-sm">A Family of Faith, Preparing for Christ's Soon Return</p>
@@ -242,7 +242,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-300">© 2024 Masaka Town Seventh-day Adventist Church. All rights reserved.</p>
+          <p className="text-gray-300">© 2006 - {new Date().getFullYear()} Masaka Town Seventh-day Adventist Church. All rights reserved.</p>
         </div>
       </div>
     </footer>
