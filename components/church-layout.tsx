@@ -37,7 +37,7 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
           <div className="flex items-center justify-between h-16">
             {/* Logo and Church Name */}
             <div className="flex items-center space-x-3">
-              <img src="/sda-logo-white.png" alt="SDA Logo" className="h-10 w-10" />
+              <img src="/adventist-symbol--white.png" alt="SDA Logo" className="h-10 w-10" />
               
             </div>
 
@@ -111,7 +111,7 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
           <div className="flex flex-col h-full">
             {/* SDA Logo */}
             <div className="p-6 text-center">
-              <img src="/sda-worldwide-logo-white.png" alt="SDA Worldwide Logo" className="w-20 h-20 mx-auto mb-4" />
+              <img src="/adventist-symbol--white.png" alt="SDA Worldwide Logo" className="w-20 h-20 mx-auto mb-4" />
               <div className="text-white">
                 <h3 className="text-sm font-semibold">Masaka Town</h3>
                 <p className="text-xs opacity-80">SDA Church</p>
