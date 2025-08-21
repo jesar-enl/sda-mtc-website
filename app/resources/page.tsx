@@ -121,7 +121,7 @@ export default function ResourcesPage() {
   return (
     <div className="lg:pr-[14.28%]">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-[#36747D] to-[#2a5a61] text-white">
+      <section className="relative py-20 px-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Resources</h1>
           <p className="text-xl opacity-90">
@@ -143,15 +143,15 @@ export default function ResourcesPage() {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <Badge className="bg-[#36747D] text-white">{lesson.quarter}</Badge>
-                    <Book className="h-5 w-5 text-[#36747D]" />
+                    <Badge className="bg-orange-500 text-white">{lesson.quarter}</Badge>
+                    <Book className="h-5 w-5 text-orange-500" />
                   </div>
                   <CardTitle className="text-xl">{lesson.title}</CardTitle>
                   <CardDescription>{lesson.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex gap-2">
-                    <Button size="sm" className="flex-1 bg-[#36747D] hover:bg-[#2a5a61]">
+                    <Button size="sm" className="flex-1 bg-orange-500 hover:bg-orange-600">
                       <Download className="h-4 w-4 mr-1" />
                       PDF
                     </Button>
@@ -193,7 +193,7 @@ export default function ResourcesPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-[#36747D] hover:bg-[#2a5a61]">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600">
                     <Download className="h-4 w-4 mr-2" />
                     Download
                   </Button>
@@ -220,13 +220,13 @@ export default function ResourcesPage() {
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge className="bg-blue-100 text-blue-800">{guide.lessons} Lessons</Badge>
-                    <Book className="h-5 w-5 text-[#36747D]" />
+                    <Book className="h-5 w-5 text-orange-500" />
                   </div>
                   <CardTitle className="text-xl">{guide.title}</CardTitle>
                   <CardDescription>{guide.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-[#36747D] hover:bg-[#2a5a61]">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600">
                     <Download className="h-4 w-4 mr-2" />
                     Download Study Guide
                   </Button>
@@ -254,18 +254,18 @@ export default function ResourcesPage() {
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline">{media.type}</Badge>
                     {media.type.includes("TV") || media.type.includes("Ministry") ? (
-                      <Video className="h-5 w-5 text-[#36747D]" />
+                      <Video className="h-5 w-5 text-orange-500" />
                     ) : media.type.includes("Radio") ? (
                       <Headphones className="h-5 w-5 text-[#36747D]" />
                     ) : (
-                      <FileText className="h-5 w-5 text-[#36747D]" />
+                      <FileText className="h-5 w-5 text-orange-500" />
                     )}
                   </div>
                   <CardTitle className="text-xl">{media.name}</CardTitle>
                   <CardDescription>{media.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-[#36747D] hover:bg-[#2a5a61]" asChild>
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600" asChild>
                     <a href={media.url} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Visit Website
@@ -293,9 +293,9 @@ export default function ResourcesPage() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#36747D]"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
-                <Button className="bg-[#36747D] hover:bg-[#2a5a61]">Subscribe</Button>
+                <Button className="bg-orange-500 hover:bg-orange-600">Subscribe</Button>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 We respect your privacy and will never share your email address.
