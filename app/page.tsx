@@ -69,7 +69,7 @@ export default function HomePage() {
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>Saturdays, 9:00 AM - 12:00 PM</span>
+                    <span>Saturdays, 09:00 AM - 06:00 PM</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-muted-foreground" />
