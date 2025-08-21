@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "A Family of Faith, Preparing for Christ's Soon Return - Join us for worship, fellowship, and spiritual growth in Masaka Town, Uganda. Sabbath services, youth programs, community outreach.",
   generator: "v0.app",
   icons: {
-    icon: "favicon.ico",
+    icon: "/favicon.ico",
   },
   keywords: [
     "Seventh-day Adventist",
