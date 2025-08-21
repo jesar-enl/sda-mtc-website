@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     "Health Ministry",
     "Evangelism",
   ],
-  authors: [{ name: "Masaka Town SDA Church" }],
-  creator: "Masaka Town SDA Church",
+  authors: [{ name: "Jesse Kyambadde" }],
+  creator: "Jesse Kyambadde",
   publisher: "Masaka Town SDA Church",
   formatDetection: {
     email: false,
