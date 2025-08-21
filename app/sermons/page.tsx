@@ -117,7 +117,7 @@ export default function SermonsPage() {
   return (
     <div className="lg:pr-[14.28%]">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-[#36747D] to-[#2a5a61] text-white">
+      <section className="relative py-20 px-4bg-gradient-to-r from-orange-600  to-orange-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Sermons</h1>
           <p className="text-xl opacity-90">
@@ -189,7 +189,7 @@ export default function SermonsPage() {
                         </div>
 
                         <div className="flex gap-2 pt-2">
-                          <Button size="sm" className="flex-1 bg-[#36747D] hover:bg-[#2a5a61]">
+                          <Button size="sm" className="flex-1 bg-orange-600 hover:bg-orange-800">
                             <Play className="h-4 w-4 mr-1" />
                             Watch
                           </Button>
@@ -222,7 +222,7 @@ export default function SermonsPage() {
                 <img src="/featured-sermon.png" alt="Featured Sermon" className="w-full h-64 md:h-full object-cover" />
               </div>
               <div className="md:w-1/2 p-6">
-                <Badge className="bg-[#36747D] text-white mb-3">Featured</Badge>
+                <Badge className="bg-orange-700 text-white mb-3">Featured</Badge>
                 <h3 className="text-2xl font-bold mb-3">Walking by Faith, Not by Sight</h3>
                 <p className="text-muted-foreground mb-4">
                   Pastor John Mukasa delivers a powerful message about trusting God's plan even when we cannot see the
@@ -244,7 +244,7 @@ export default function SermonsPage() {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <Button className="bg-[#36747D] hover:bg-[#2a5a61]">
+                  <Button className="bg-orange-600 hover:bg-orange-700">
                     <Play className="h-4 w-4 mr-2" />
                     Watch Now
                   </Button>
