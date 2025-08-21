@@ -117,7 +117,7 @@ export default function SermonsPage() {
   return (
     <div className="lg:pr-[14.28%]">
       {/* Hero Section */}
-      <section className="relative py-20 px-4bg-gradient-to-r from-orange-600  to-orange-700 text-white">
+      <section className="relative py-20 px-4 bg-gradient-to-r from-orange-600  to-orange-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Sermons</h1>
           <p className="text-xl opacity-90">
