@@ -272,16 +272,16 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover mx-auto"
                   />
                 </div>
-                <CardTitle className="text-xl">Pastor John Mukasa</CardTitle>
+                <CardTitle className="text-xl">Pastor Ian Sendegeya</CardTitle>
                 <CardDescription>Church Pastor</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Pastor John has served our English-speaking congregation since its founding in 2006, providing
+                  Pastor Ian has served our congregation since its founding in 2024, providing
                   spiritual leadership and pastoral care to our diverse international community.
                 </p>
                 <Badge variant="outline" className="text-xs">
-                  18+ Years Ministry
+                  5+ Years Ministry
                 </Badge>
               </CardContent>
             </Card>
@@ -296,12 +296,12 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover mx-auto"
                   />
                 </div>
-                <CardTitle className="text-xl">Grace Nakato</CardTitle>
+                <CardTitle className="text-xl">M.G. Cissy K. Ssali</CardTitle>
                 <CardDescription>Church Clerk/Secretary</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Grace maintains our church records, coordinates communications, and ensures smooth administrative
+                  M.G. Cissy maintains our church records, coordinates communications, and ensures smooth administrative
                   operations for our growing congregation.
                 </p>
                 <Badge variant="outline" className="text-xs">
@@ -320,12 +320,12 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover mx-auto"
                   />
                 </div>
-                <CardTitle className="text-xl">Samuel Kato</CardTitle>
+                <CardTitle className="text-xl">M.G. Harriet Muwonge</CardTitle>
                 <CardDescription>Church Treasurer</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Samuel oversees our church finances, manages tithes and offerings, and ensures faithful stewardship of
+                  M.G. Harriet oversees our church finances, manages tithes and offerings, and ensures faithful stewardship of
                   God's resources entrusted to our congregation.
                 </p>
                 <Badge variant="outline" className="text-xs">
@@ -344,12 +344,12 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover mx-auto"
                   />
                 </div>
-                <CardTitle className="text-xl">Elder David Ssemakula</CardTitle>
+                <CardTitle className="text-xl">Elder Jjuuko Godfrey</CardTitle>
                 <CardDescription>First Elder/Head Elder</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Elder David leads our board of elders, assists in pastoral duties, and provides spiritual guidance and
+                  Elder Jjuuko leads our board of elders, assists in pastoral duties, and provides spiritual guidance and
                   leadership support to our church family.
                 </p>
                 <Badge variant="outline" className="text-xs">
@@ -368,12 +368,12 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover mx-auto"
                   />
                 </div>
-                <CardTitle className="text-xl">Mary Namuli</CardTitle>
+                <CardTitle className="text-xl">Mrs. Regina Nyanzi</CardTitle>
                 <CardDescription>Sabbath School Superintendent</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Mary coordinates our Sabbath School program, ensuring quality Bible study experiences for all age
+                  Mrs. Regina coordinates our Sabbath School program, ensuring quality Bible study experiences for all age
                   groups in our diverse congregation.
                 </p>
                 <Badge variant="outline" className="text-xs">
@@ -392,12 +392,12 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover mx-auto"
                   />
                 </div>
-                <CardTitle className="text-xl">Peter Ssali</CardTitle>
-                <CardDescription>Youth Ministries Director</CardDescription>
+                <CardTitle className="text-xl">M.G. Jesse Kyambadde</CardTitle>
+                <CardDescription>Young Adult Leader</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Peter leads our vibrant youth programs, organizing activities and spiritual growth opportunities for
+                  Jesse leads our vibrant youth programs, organizing activities and spiritual growth opportunities for
                   young people and students in our community.
                 </p>
                 <Badge variant="outline" className="text-xs">
