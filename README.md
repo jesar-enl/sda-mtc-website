@@ -1,30 +1,72 @@
-# SDA church website
+# SDA Masaka Town Church website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A modern responsive website for Masaka Town Seventh-day Adventist Church, built with NExt.js, Tailwind CSS, and shadcn/ui. This site provides information about the church, its miistries, events resources, and ways to give, all while offering a smooth user experience across devices.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jesarenls-projects/v0-sda-church-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/ar8kttlngZm)
+## Table of Contents
 
-## Overview
+1. Features
+2. Tech Stack
+3. Folder Structure
+4. Installation
+5. Usage
+6. Deployment
+7. Contributing
+8. License
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+### Features
 
-## Deployment
+- Fully responsive layout with fixed, semi-transparent, blurred top navigation bar.
+- Desktop and mobile friendly navigation menu with hamburger toggle.
+- Dark mode toggle for user preference.
+- Dynamic current year in the footer.
+- Quick links to Sermons, Ministries, Events, Resources, Gallery, Contact, Give
+- Right-sided bar to represent the Seventh-day Sabbath
+- External links to SDA resources like Hope Channel International
 
-Your project is live at:
+### Tech Stack
 
-**[https://vercel.com/jesarenls-projects/v0-sda-church-website](https://vercel.com/jesarenls-projects/v0-sda-church-website)**
+> Next.js
+> Tailwind CSS 3.x
+> shadcn/ui
+> Lucide React
+> React
 
-## Build your app
+### Installation
 
-Continue building your app on:
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/masaka-town-sda.git
+   cd masaka-town-sda
+   ```
+2. Intall dependencies:
+   ```
+   npm install
+   # or
+   pnpm install
+   ```
+3. Start the developmpent server:
+   ```
+   npm run dev
+   # or
+   pnpm dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your favorite browser.
 
-**[https://v0.app/chat/projects/ar8kttlngZm](https://v0.app/chat/projects/ar8kttlngZm)**
+### Usage
 
-## How It Works
+- Update navigation links in ```app/layout.tsx``` under the ```navigation``` tray.
+- Replace the logos or images in the ```public/``` folder.
+- Footer automaticall uses ```new Date().getFullYear()``` for dynamic year.
+- Add new pages under ```app/``` for Sermons Ministries, Events Resource, Gallery and Contact.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+### Contributing
+
+1. Fork the repository.
+2. Create a new branch: ```git checkout -b feature/your-feature```.
+3. Make changes and commit: ```git commit -m "Add feature"```.
+4. Push to branch: ```git push origin feature/your-feature```.
+5. Open a pull request.
+
+### License
+
+This project is open source under the MIT License.
