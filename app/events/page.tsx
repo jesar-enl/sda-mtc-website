@@ -126,7 +126,7 @@ export default function EventsPage() {
   return (
     <div className="lg:pr-[14.28%]">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-[#36747D] to-[#2a5a61] text-white">
+      <section className="relative py-20 px-4 bg-gradient-to-r from-sky-400 to-sky-500 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Upcoming Events</h1>
           <p className="text-xl opacity-90">
@@ -174,21 +174,21 @@ export default function EventsPage() {
                     <div className="grid md:grid-cols-2 gap-4 mb-6">
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-sm">
-                          <Calendar className="h-4 w-4 text-[#36747D]" />
+                          <Calendar className="h-4 w-4 text-sky-500" />
                           <span className="font-medium">{formatDate(event.date)}</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm">
-                          <Clock className="h-4 w-4 text-[#36747D]" />
+                          <Clock className="h-4 w-4 text-sky-500" />
                           <span>{event.time}</span>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-sm">
-                          <MapPin className="h-4 w-4 text-[#36747D]" />
+                          <MapPin className="h-4 w-4 text-sky-500" />
                           <span>{event.location}</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm">
-                          <Users className="h-4 w-4 text-[#36747D]" />
+                          <Users className="h-4 w-4 text-sky-500" />
                           <span>{event.expectedAttendees} expected</span>
                         </div>
                       </div>
@@ -199,7 +199,7 @@ export default function EventsPage() {
                         <span className="font-medium">Organized by:</span> {event.organizer}
                       </div>
                       <Button
-                        className="bg-[#36747D] hover:bg-[#2a5a61]"
+                        className="bg-sky-500 hover:bg-sky-600"
                         onClick={() => setSelectedEvent(selectedEvent === event.id ? null : event.id)}
                       >
                         {selectedEvent === event.id ? "Show Less" : "Learn More"}
@@ -212,7 +212,7 @@ export default function EventsPage() {
                         <h4 className="font-semibold mb-2">Event Details</h4>
                         <p className="text-sm text-muted-foreground mb-4">{event.description}</p>
                         <div className="flex gap-3">
-                          <Button size="sm" className="bg-[#36747D] hover:bg-[#2a5a61]">
+                          <Button size="sm" className="bg-sky-500 hover:bg-sky-600">
                             Register Now
                           </Button>
                           <Button size="sm" variant="outline">
@@ -290,7 +290,7 @@ export default function EventsPage() {
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#36747D]"
                 />
-                <Button className="bg-[#36747D] hover:bg-[#2a5a61]">Subscribe</Button>
+                <Button className="bg-sky-500 hover:bg-sky-600">Subscribe</Button>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 Get weekly event updates and special announcements delivered to your inbox.
