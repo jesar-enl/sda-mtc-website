@@ -2,12 +2,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Users, Heart, Music, Stethoscope, TreePine, Baby, UserCheck, HandHeart } from "lucide-react"
+import Link from "next/link"
 
 export default function MinistriesPage() {
   const ministries = [
     {
       id: 1,
       name: "Youth Ministry",
+      slug: "youth-ministry",
       description:
         "Empowering young people to grow in faith, develop leadership skills, and make a positive impact in their communities through Bible study, fellowship, and service projects.",
       icon: Users,
@@ -21,6 +23,7 @@ export default function MinistriesPage() {
     {
       id: 2,
       name: "Children's Ministry",
+      slug: "childrens-ministry",
       description:
         "Creating a nurturing environment where children can learn about God's love through age-appropriate Bible stories, songs, crafts, and interactive activities.",
       icon: Baby,
@@ -34,6 +37,7 @@ export default function MinistriesPage() {
     {
       id: 3,
       name: "Women's Ministry",
+      slug: "womens-ministry",
       description:
         "Supporting women in their spiritual journey through fellowship, Bible study, prayer, and practical life skills while encouraging them to use their gifts in service.",
       icon: Heart,
@@ -47,6 +51,7 @@ export default function MinistriesPage() {
     {
       id: 4,
       name: "Men's Ministry",
+      slug: "mens-ministry",
       description:
         "Encouraging men to be spiritual leaders in their homes and communities through Bible study, mentorship, and practical service opportunities.",
       icon: UserCheck,
@@ -60,6 +65,7 @@ export default function MinistriesPage() {
     {
       id: 5,
       name: "Music Ministry",
+      slug: "music-ministry",
       description:
         "Leading the congregation in worship through inspiring music, developing musical talents, and using the gift of music to glorify God and touch hearts.",
       icon: Music,
@@ -73,6 +79,7 @@ export default function MinistriesPage() {
     {
       id: 6,
       name: "Health Ministry",
+      slug: "health-ministry",
       description:
         "Promoting physical, mental, and spiritual wellness through health education, cooking classes, fitness programs, and community health initiatives.",
       icon: Stethoscope,
@@ -86,6 +93,7 @@ export default function MinistriesPage() {
     {
       id: 7,
       name: "Pathfinder Club",
+      slug: "pathfinder-club",
       description:
         "Developing character and leadership in young people through outdoor activities, skill building, community service, and spiritual growth programs.",
       icon: TreePine,
@@ -99,6 +107,7 @@ export default function MinistriesPage() {
     {
       id: 8,
       name: "Community Outreach",
+      slug: "community-outreach",
       description:
         "Serving our local community through practical assistance, evangelism, social programs, and meeting the physical and spiritual needs of our neighbors.",
       icon: HandHeart,
@@ -184,7 +193,9 @@ export default function MinistriesPage() {
                         </div>
                       </div>
 
-                      <Button className="w-full bg-emerald-400 hover:bg-emerald-500">Learn More</Button>
+                      <Link href={`/ministries/${ministry.slug}`}>
+                        <Button className="w-full bg-emerald-400 hover:bg-emerald-500">Learn More</Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

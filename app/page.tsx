@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, MapPin, Play } from "lucide-react"
+import { Calendar, Clock, MapPin, Play, Radio } from "lucide-react"
 import { SabbathCountdown } from "@/components/sabbath-countdown"
 import { NewsletterSignup } from "@/components/newsletter-signup"
+import { LivestreamEmbed } from "@/components/livestream-embed"
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -46,6 +48,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Livestream Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 fade-in-up">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Radio className="h-8 w-8 text-red-600 animate-pulse" />
+              <h2 className="text-3xl md:text-4xl font-bold">Watch Live</h2>
+            </div>
+            <p className="text-muted-foreground text-lg">Join our Sabbath worship service from anywhere in the world</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <LivestreamEmbed
+              youtubeVideoId="uaqiuhBHn7A"
+              title="Live Sabbath Worship Service"
+              description="Experience worship with us online every Saturday"
+              scheduledTime="Every Saturday at 8:30 AM EAT"
+            />
+
+            <div className="text-center mt-8">
+              <Link href="/livestream">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
+                  <Radio className="h-5 w-5 mr-2" />
+                  Go to Full Livestream Page
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Upcoming Events Section */}
       <section className="py-16 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
@@ -69,7 +102,7 @@ export default function HomePage() {
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>Saturdays, 09:00 AM - 06:00 PM</span>
+                    <span>Saturdays, 08:30 AM - 06:00 PM</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-muted-foreground" />
@@ -146,7 +179,7 @@ export default function HomePage() {
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: "url('/pastor-preaching.png')",
+                  backgroundImage: "url('https://i9.ytimg.com/vi/uaqiuhBHn7A/mqdefault.jpg?v=68c513af&sqp=CJS_7sYG&rs=AOn4CLAkYFsnpf-d6GA9QmKJw29lGvu96w')",
                 }}
               >
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
@@ -162,15 +195,14 @@ export default function HomePage() {
             <CardContent className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Badge className="bg-[#36747D] text-white">Latest Sermon</Badge>
-                <span className="text-sm text-muted-foreground">December 21, 2024</span>
+                <span className="text-sm text-muted-foreground">September 13, 2025</span>
               </div>
-              <h3 className="text-2xl font-bold mb-2">The Promise of His Coming</h3>
+              <h3 className="text-2xl font-bold mb-2">I will go; make disciples of Jesus</h3>
               <p className="text-muted-foreground mb-4">
-                Pastor John Mukasa explores the blessed hope of Christ's second coming and how it transforms our daily
-                lives. Discover the joy and peace that comes from living with eternal perspective.
+                Pr. Wasswa Joshua crowns the Mega Camp meeting 2025 calling upon all of us to be ready to "go into all nations and make disciples of Jesus Christ" as Matt. 20:18-20 instructs us.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Pastor John Mukasa</span>
+                <span className="text-sm text-muted-foreground">Pr. Wasswa Joshua</span>
                 <span className="text-sm text-muted-foreground">45 minutes</span>
               </div>
             </CardContent>

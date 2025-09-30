@@ -9,7 +9,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { sendContactEmail } from "@/app/actions/send-email"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,11 +22,42 @@ export default function ContactPage() {
     prayerDetails: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form or show success message
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const result = await sendContactEmail(formData)
+
+      if (result.success) {
+        setSubmitStatus("success")
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          prayerRequest: false,
+          prayerDetails: "",
+        })
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus("idle"), 5000)
+      } else {
+        throw new Error(result.message)
+      }
+    } catch (error) {
+      console.error("Error sending email:", error)
+      setSubmitStatus("error")
+      setErrorMessage(error instanceof Error ? error.message : "Failed to send message. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -203,9 +235,32 @@ export default function ContactPage() {
                       )}
                     </div>
 
-                    <Button type="submit" className="w-full bg-[#36747D] hover:bg-[#2a5a61]">
-                      <Send className="h-4 w-4 mr-2" />
-                      Send Message
+                    {submitStatus === "success" && (
+                      <div className="flex items-center gap-2 p-4 bg-green-50 text-green-800 rounded-lg border border-green-200">
+                        <CheckCircle className="h-5 w-5" />
+                        <p className="text-sm font-medium">Message sent successfully! We'll get back to you soon.</p>
+                      </div>
+                    )}
+
+                    {submitStatus === "error" && (
+                      <div className="flex items-center gap-2 p-4 bg-red-50 text-red-800 rounded-lg border border-red-200">
+                        <AlertCircle className="h-5 w-5" />
+                        <p className="text-sm font-medium">{errorMessage}</p>
+                      </div>
+                    )}
+
+                    <Button type="submit" className="w-full bg-[#36747D] hover:bg-[#2a5a61]" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>
+                          <span className="animate-spin mr-2">⏳</span>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4 mr-2" />
+                          Send Message
+                        </>
+                      )}
                     </Button>
                   </form>
                 </CardContent>

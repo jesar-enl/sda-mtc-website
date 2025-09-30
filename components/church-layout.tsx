@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
+  { name: "Livestream", href: "/livestream" },
   { name: "Sermons", href: "/sermons" },
   { name: "Ministries", href: "/ministries" },
   { name: "Events", href: "/events" },
@@ -38,7 +39,6 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
             {/* Logo and Church Name */}
             <div className="flex items-center space-x-3">
               <img src="/adventist-symbol--white.png" alt="SDA Logo" className="h-12 w-12 lg:h-14 lg:w-14" />
-              
             </div>
 
             {/* Desktop Navigation */}
@@ -171,6 +171,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/livestream" className="text-gray-300 hover:text-white transition-colors">
+                  Livestream
+                </Link>
+              </li>
+              <li>
                 <Link href="/sermons" className="text-gray-300 hover:text-white transition-colors">
                   Sermons
                 </Link>
@@ -242,7 +247,9 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-300">© 2006 - {new Date().getFullYear()} Masaka Town Seventh-day Adventist Church. All rights reserved.</p>
+          <p className="text-gray-300">
+            © 2006 - {new Date().getFullYear()} Masaka Town Seventh-day Adventist Church. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
