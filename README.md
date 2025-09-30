@@ -34,22 +34,22 @@ A modern responsive website for Masaka Town Seventh-day Adventist Church, built 
 ### Installation
 
 1. Clone the repository:
-   ```
+   \`\`\`
    git clone https://github.com/yourusername/masaka-town-sda.git
    cd masaka-town-sda
-   ```
+   \`\`\`
 2. Intall dependencies:
-   ```
+   \`\`\`
    npm install
    # or
    pnpm install
-   ```
+   \`\`\`
 3. Start the developmpent server:
-   ```
+   \`\`\`
    npm run dev
    # or
    pnpm dev
-   ```
+   \`\`\`
 4. Open [http://localhost:3000](http://localhost:3000) in your favorite browser.
 
 ### Usage
