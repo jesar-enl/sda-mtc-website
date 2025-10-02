@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Livestream - @SDAMTC',
+  title: 'Livestream',
 }
 
 export default function ContactLayout({
