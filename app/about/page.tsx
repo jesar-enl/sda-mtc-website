@@ -3,6 +3,12 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Heart, Book, Globe, ExternalLink } from "lucide-react"
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Us', // Automatically becomes "About Us - @SDAMTC"
+}
+
 export default function AboutPage() {
   return (
     <div className="lg:pr-[14.28%]">

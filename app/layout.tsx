@@ -13,7 +13,10 @@ const notoSans = Noto_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Seventh-day Adventist Church Masaka Town",
+  title: {
+    default: '@SDAMasakaTownChurch',
+    template: '%s - @SDAMTC',
+  },
   description:
     "A Family of Faith, Preparing for Christ's Soon Return - Join us for worship, fellowship, and spiritual growth in Masaka Town, Uganda. Sabbath services, youth programs, community outreach.",
   generator: "v0.app",
