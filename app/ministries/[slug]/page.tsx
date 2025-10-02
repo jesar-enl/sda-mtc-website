@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${ministry.name} - @SDAMTC`,
+    title: `${ministry.name}`,
     description: ministry.description,
   }
 }
