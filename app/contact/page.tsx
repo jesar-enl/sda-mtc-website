@@ -12,11 +12,6 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { sendContactEmail } from "@/app/actions/send-email"
 
-import type {Metadata} from 'next'
-
-export const metadata: Metadata = {
-  title: 'Contact Us',
-}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
