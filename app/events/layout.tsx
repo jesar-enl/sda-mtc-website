@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Events - @SDAMTC',
+  title: 'Events',
 }
 
 export default function ContactLayout({
