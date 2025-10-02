@@ -33,28 +33,40 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Top Navigation Bar */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-cyan-700/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md border-b">
+      <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-cyan-700 to-cyan-600 dark:from-gray-900 dark:to-gray-800 backdrop-blur-md shadow-lg border-b border-cyan-600/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo and Church Name */}
-            <div className="flex items-center space-x-3">
-              <img src="/adventist-symbol--white.png" alt="SDA Logo" className="h-12 w-12 lg:h-14 lg:w-14" />
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center space-x-3 group">
+                <img
+                  src="/adventist-symbol--white.png"
+                  alt="SDA Logo"
+                  className="h-10 w-10 lg:h-12 lg:w-12 transition-transform group-hover:scale-110"
+                />
+              </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-8">
+            {/* Desktop Navigation - More compact and visually appealing */}
+            <nav className="hidden lg:flex items-center space-x-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "px-3 py-2 text-lg font-medium rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800",
+                    "relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded-lg group",
                     pathname === item.href
-                      ? "text-[#36747D] bg-gray-100 dark:bg-gray-800"
-                      : "text-gray-700 dark:text-gray-300",
+                      ? "text-white bg-white/20"
+                      : "text-white/90 hover:text-white hover:bg-white/10",
                   )}
                 >
                   {item.name}
+                  {/* Active indicator underline */}
+                  {pathname === item.href && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-white rounded-full" />
+                  )}
+                  {/* Hover underline */}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-white/60 rounded-full transition-all duration-200 group-hover:w-8" />
                 </Link>
               ))}
             </nav>
@@ -66,7 +78,7 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden"
+                className="lg:hidden text-white hover:bg-white/10"
               >
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>
@@ -75,17 +87,17 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
 
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-gray-200 dark:border-gray-700">
+            <div className="lg:hidden border-t border-white/10">
               <nav className="py-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "block px-3 py-2 text-base font-medium rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800",
+                      "block px-3 py-2 text-base font-medium rounded-md transition-colors",
                       pathname === item.href
-                        ? "text-[#36747D] bg-gray-100 dark:bg-gray-800"
-                        : "text-gray-700 dark:text-gray-300",
+                        ? "text-white bg-white/20"
+                        : "text-white/90 hover:text-white hover:bg-white/10",
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -106,25 +118,17 @@ export function ChurchLayout({ children }: ChurchLayoutProps) {
           <Footer />
         </main>
 
-        {/* Right Strip (1/7 width) - Logo only */}
-        <aside className="hidden lg:block lg:w-1/7 min-h-screen fixed right-0 top-16 bg-[#36747D]">
-          <div className="flex flex-col h-full">
-            {/* SDA Logo */}
-            <div className="p-6 text-center">
-              <img src="/adventist-symbol--white.png" alt="SDA Worldwide Logo" className="w-20 h-20 mx-auto mb-4" />
-              <div className="text-white">
-                <h3 className="text-sm font-semibold">Masaka Town</h3>
-                <p className="text-xs opacity-80">SDA Church</p>
-                <p className="text-xs opacity-60 mt-2">Est. 2006</p>
-              </div>
-            </div>
-
-            {/* Decorative element */}
-            <div className="flex-1 flex items-center justify-center">
-              <div className="text-white/20 text-center">
-                <div className="text-4xl mb-2">✝</div>
-                <p className="text-xs">A Family of Faith</p>
-              </div>
+        {/* Right Strip (1/7 width) - Logo only, clean and minimal */}
+        <aside className="hidden lg:block lg:w-1/7 min-h-screen fixed right-0 top-16 bg-gradient-to-b from-cyan-700 to-cyan-800 dark:from-gray-900 dark:to-gray-950">
+          <div className="flex flex-col items-center justify-center h-full p-8">
+            {/* SDA Logo - centered and prominent */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-300" />
+              <img
+                src="/adventist-symbol--white.png"
+                alt="SDA Logo"
+                className="relative w-24 h-24 transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
           </div>
         </aside>
