@@ -2,17 +2,16 @@
 
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Calendar, Clock } from "lucide-react"
+import { RSVPModal } from "@/components/rsvp-modal"
+import { Calendar } from "lucide-react"
 
 interface EventCountdownProps {
   eventName: string
   eventDate: Date
   eventDescription: string
-  onRSVP?: () => void
 }
 
-export function EventCountdown({ eventName, eventDate, eventDescription, onRSVP }: EventCountdownProps) {
+export function EventCountdown({ eventName, eventDate, eventDescription }: EventCountdownProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -62,10 +61,17 @@ export function EventCountdown({ eventName, eventDate, eventDescription, onRSVP 
             </div>
           ))}
         </div>
-        <Button onClick={onRSVP} size="lg" className="w-full bg-white text-[#36747D] hover:bg-white/90 font-semibold">
-          <Clock className="h-4 w-4 mr-2" />
-          RSVP Now
-        </Button>
+        <RSVPModal
+          eventName={eventName}
+          eventDate={eventDate.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        />
       </CardContent>
     </Card>
   )

@@ -160,7 +160,6 @@ export default function HomePage() {
             eventName="Creation Sabbath"
             eventDate={creationSabbathDate}
             eventDescription="A Sabbath where we reflect on creation through worship. Plan not to miss!"
-            onRSVP={() => {}}
           />
         </div>
       </section>
