@@ -96,7 +96,7 @@ export function SabbathCountdown() {
         <div className="text-center mb-4">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Clock className="h-5 w-5" />
-            <h3 className="text-lg font-semibold">Next Sabbath Begins In:</h3>
+            <h3 className="text-lg font-semibold">Sabbath Begins In:</h3>
           </div>
           <p className="text-sm opacity-75">Friday at sunset (6:30 PM)</p>
         </div>

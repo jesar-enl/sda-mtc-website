@@ -16,6 +16,18 @@ interface DevotionalPreviewProps {
 }
 
 export function DevotionalPreview({ title, excerpt, date, category, slug, image }: DevotionalPreviewProps) {
+  const getBasePath = () => {
+    switch (category.toLowerCase()) {
+      case "blog":
+        return "/blogs"
+      case "message":
+        return "/messages"
+      case "devotional":
+      default:
+        return "/devotionals"
+    }
+  }
+
   return (
     <Card className="hover:shadow-lg transition-all duration-300 overflow-hidden group stagger-item">
       <div className="relative aspect-video overflow-hidden">
@@ -37,7 +49,7 @@ export function DevotionalPreview({ title, excerpt, date, category, slug, image 
         <CardDescription className="line-clamp-3">{excerpt}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Link href={`/devotionals/${slug}`}>
+        <Link href={`${getBasePath()}/${slug}`}>
           <Button variant="ghost" className="w-full group/btn">
             Read Full Message
             <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />

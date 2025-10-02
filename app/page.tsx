@@ -39,10 +39,10 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            Masaka Town
+            Seventh-day Adventist Church
             <br />
             <span className="text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Seventh-day Adventist Church
+              MASAKA TOWN
             </span>
           </h1>
           <p className="text-xl md:text-3xl mb-4 font-semibold opacity-95 text-balance">
@@ -321,7 +321,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-background">
+      <section className="py-16 px-4 bg-background" id="weekly-inspiration">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Weekly Inspiration</h2>
