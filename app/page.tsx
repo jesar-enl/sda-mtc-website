@@ -14,7 +14,7 @@ import { RSVPModal } from "@/components/rsvp-modal"
 import Link from "next/link"
 
 export default function HomePage() {
-  const healthFairDate = new Date("2025-03-15T10:00:00")
+  const creationSabbathDate = new Date("2025-10-25T08:30:00")
 
   return (
     <div className="lg:pr-[14.28%]">
@@ -157,9 +157,9 @@ export default function HomePage() {
             <p className="text-muted-foreground text-lg">Mark your calendar and join us</p>
           </div>
           <EventCountdown
-            eventName="Community Health Fair"
-            eventDate={healthFairDate}
-            eventDescription="Free health screenings, wellness education, and community resources for all"
+            eventName="Creation Sabbath"
+            eventDate={creationSabbathDate}
+            eventDescription="A Sabbath where we reflect on creation through worship. Plan not to miss!"
             onRSVP={() => {}}
           />
         </div>
