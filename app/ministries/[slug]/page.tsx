@@ -18,6 +18,23 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import type { Metadata } from 'next'
+
+// Add the generateMetadata function here
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const ministry = ministriesData[params.slug as keyof typeof ministriesData]
+  
+  if (!ministry) {
+    return {
+      title: 'Ministry Not Found - @SDAMTC'
+    }
+  }
+
+  return {
+    title: `${ministry.name} - @SDAMTC`,
+    description: ministry.description,
+  }
+}
 
 const ministriesData = {
   "youth-ministry": {
@@ -480,6 +497,7 @@ Our ministry coordinates various outreach programs that address real needs in ou
       "Volunteers are always needed! Contact our outreach coordinator to learn about upcoming projects and how you can get involved. There are opportunities for people of all ages and abilities to serve.",
   },
 }
+
 
 export default function MinistryDetailPage({ params }: { params: { slug: string } }) {
   const ministry = ministriesData[params.slug as keyof typeof ministriesData]

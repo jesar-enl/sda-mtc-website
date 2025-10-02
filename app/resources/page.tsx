@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Download, ExternalLink, Book, Headphones, Video, FileText } from "lucide-react"
 
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Resources',
+}
+
 export default function ResourcesPage() {
   const sabbathSchoolLessons = [
     {

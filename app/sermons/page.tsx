@@ -7,7 +7,11 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Play, Download, Calendar, User, Clock } from "lucide-react"
 
+import type {Metadata} from 'next'
 
+export const metadata: Metadata = {
+  title: 'Sermons',
+}
 
 export default function SermonsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")

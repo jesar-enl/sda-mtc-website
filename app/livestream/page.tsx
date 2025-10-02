@@ -5,6 +5,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Radio, MessageCircle, Share2, Bell, Video, PlayCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Livestream',
+}
+
 export default function LivestreamPage() {
   const recentSermons = [
     {

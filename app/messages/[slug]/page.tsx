@@ -4,6 +4,29 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, User, BookOpen, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+// Simple metadata generation
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  try {
+    const post = getPostBySlug(params.slug)
+    
+    if (!post || post.category !== "Message") {
+      return {
+        title: 'Message Not Found - @SDAMTC'
+      }
+    }
+
+    return {
+      title: `${post.title} - @SDAMTC`,
+      description: post.excerpt,
+    }
+  } catch (error) {
+    return {
+      title: 'Message - @SDAMTC'
+    }
+  }
+}
 
 export async function generateStaticParams() {
   return devotionalPosts

@@ -7,6 +7,12 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Play, Download, Eye, Calendar } from "lucide-react"
 
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Gallery',
+}
+
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedMedia, setSelectedMedia] = useState<any>(null)

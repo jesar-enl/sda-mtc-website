@@ -4,6 +4,12 @@ import { Badge } from "@/components/ui/badge"
 import { Users, Heart, Music, Stethoscope, TreePine, Baby, UserCheck, HandHeart } from "lucide-react"
 import Link from "next/link"
 
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Ministries',
+}
+
 export default function MinistriesPage() {
   const ministries = [
     {

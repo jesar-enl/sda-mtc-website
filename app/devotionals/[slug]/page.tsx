@@ -4,6 +4,32 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, User, BookOpen, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+// Add generateMetadata function for dynamic titles
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  try {
+    // Find the post directly from the devotionalPosts array
+    const post = devotionalPosts.find(
+      (p) => p.slug === params.slug && p.category === "Devotional"
+    )
+    
+    if (!post) {
+      return {
+        title: 'Devotional Not Found - @SDAMTC'
+      }
+    }
+
+    return {
+      title: `${post.title} - @SDAMTC`,
+      description: post.excerpt,
+    }
+  } catch (error) {
+    return {
+      title: 'Devotional - @SDAMTC'
+    }
+  }
+}
 
 export async function generateStaticParams() {
   return devotionalPosts

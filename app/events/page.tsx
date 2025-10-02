@@ -5,6 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, MapPin, Users, ChevronRight } from "lucide-react"
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Events',
+}
 
 export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null)

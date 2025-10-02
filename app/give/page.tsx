@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Heart, CreditCard, Smartphone, Building, Gift, Target, Users, Home } from "lucide-react"
 
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Give',
+}
+
 export default function GivePage() {
   const givingOptions = [
     {
