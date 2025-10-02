@@ -40,6 +40,9 @@
   --sidebar-ring: oklch(0.708 0 0);
   /* Added custom ming color variable */
   --ming: #36747d;
+  /* Updated font configuration to use Noto Sans */
+  --font-sans: "Noto Sans", var(--font-sans);
+  --font-family-sans: "Noto Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 .dark {

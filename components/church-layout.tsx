@@ -252,7 +252,7 @@ function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © 2006 - {new Date().getFullYear()} Masaka Town Seventh-day Adventist Church. All rights reserved.
+            © 2006 - {new Date().getFullYear()} Seventh-day Adventist Church Masaka Town. All rights reserved.
           </p>
         </div>
       </div>

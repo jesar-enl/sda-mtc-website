@@ -1,6 +1,6 @@
 # SDA Masaka Town Church website
 
-A modern responsive website for Masaka Town Seventh-day Adventist Church, built with NExt.js, Tailwind CSS, and shadcn/ui. This site provides information about the church, its miistries, events resources, and ways to give, all while offering a smooth user experience across devices.
+A modern responsive website for Seventh-day Adventist Church Masaka Town, built with NExt.js, Tailwind CSS, and shadcn/ui. This site provides information about the church, its miistries, events resources, and ways to give, all while offering a smooth user experience across devices.
 
 ## Table of Contents
 
@@ -54,17 +54,17 @@ A modern responsive website for Masaka Town Seventh-day Adventist Church, built 
 
 ### Usage
 
-- Update navigation links in ```app/layout.tsx``` under the ```navigation``` tray.
-- Replace the logos or images in the ```public/``` folder.
-- Footer automaticall uses ```new Date().getFullYear()``` for dynamic year.
-- Add new pages under ```app/``` for Sermons Ministries, Events Resource, Gallery and Contact.
+- Update navigation links in \`\`\`app/layout.tsx\`\`\` under the \`\`\`navigation\`\`\` tray.
+- Replace the logos or images in the \`\`\`public/\`\`\` folder.
+- Footer automaticall uses \`\`\`new Date().getFullYear()\`\`\` for dynamic year.
+- Add new pages under \`\`\`app/\`\`\` for Sermons Ministries, Events Resource, Gallery and Contact.
 
 ### Contributing
 
 1. Fork the repository.
-2. Create a new branch: ```git checkout -b feature/your-feature```.
-3. Make changes and commit: ```git commit -m "Add feature"```.
-4. Push to branch: ```git push origin feature/your-feature```.
+2. Create a new branch: \`\`\`git checkout -b feature/your-feature\`\`\`.
+3. Make changes and commit: \`\`\`git commit -m "Add feature"\`\`\`.
+4. Push to branch: \`\`\`git push origin feature/your-feature\`\`\`.
 5. Open a pull request.
 
 ### License

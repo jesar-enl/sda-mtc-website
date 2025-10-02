@@ -24,7 +24,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-6">Our History</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Masaka Town Seventh-day Adventist Church was established in 2006 to serve the growing community of
+                  Seventh-day Adventist Church Masaka Town was established in 2006 to serve the growing community of
                   internationals and students who could not be adequately served in the Luganda-speaking congregations
                   in the region. As an English-speaking congregation, we filled a vital need for those seeking worship
                   and fellowship in English.
@@ -277,8 +277,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Pastor Ian has served our congregation since its founding in 2024, providing
-                  spiritual leadership and pastoral care to our diverse international community.
+                  Pastor Ian has served our congregation since its founding in 2024, providing spiritual leadership and
+                  pastoral care to our diverse international community.
                 </p>
                 <Badge variant="outline" className="text-xs">
                   5+ Years Ministry
@@ -325,8 +325,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  M.G. Harriet oversees our church finances, manages tithes and offerings, and ensures faithful stewardship of
-                  God's resources entrusted to our congregation.
+                  M.G. Harriet oversees our church finances, manages tithes and offerings, and ensures faithful
+                  stewardship of God's resources entrusted to our congregation.
                 </p>
                 <Badge variant="outline" className="text-xs">
                   Financial Stewardship
@@ -349,8 +349,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Elder Jjuuko leads our board of elders, assists in pastoral duties, and provides spiritual guidance and
-                  leadership support to our church family.
+                  Elder Jjuuko leads our board of elders, assists in pastoral duties, and provides spiritual guidance
+                  and leadership support to our church family.
                 </p>
                 <Badge variant="outline" className="text-xs">
                   Spiritual Leadership
@@ -373,8 +373,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Mrs. Regina coordinates our Sabbath School program, ensuring quality Bible study experiences for all age
-                  groups in our diverse congregation.
+                  Mrs. Regina coordinates our Sabbath School program, ensuring quality Bible study experiences for all
+                  age groups in our diverse congregation.
                 </p>
                 <Badge variant="outline" className="text-xs">
                   Bible Education
