@@ -528,15 +528,17 @@ export default function MinistryDetailPage({ params }: { params: { slug: string 
         />
         <div className="relative max-w-5xl mx-auto text-white">
           <div className="flex items-center gap-4 mb-6 animate-fade-in">
-            <div className="bg-white/20 p-6 rounded-full backdrop-blur-sm">
-              <Image
-                  src={ministry.logo}
-                  alt={`${ministry.name} logo`}
-                  fill
-                  className="object-contain"
-                  sizes="64px"
-                />
-            </div>
+            <div className="bg-white/20 p-10 rounded-full backdrop-blur-sm">
+              <div className="relative h-32 w-32">
+                  <Image
+                    src={ministry.logo}
+                    alt={`${ministry.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="128px"
+                  />
+                </div>
+              </div>
             <div>
               <Badge className="mb-3 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
                 {ministry.ageGroup}
