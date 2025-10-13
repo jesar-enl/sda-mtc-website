@@ -18,15 +18,15 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import type { Metadata } from 'next'
+import type { Metadata } from "next"
 
 // Add the generateMetadata function here
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const ministry = ministriesData[params.slug as keyof typeof ministriesData]
-  
+
   if (!ministry) {
     return {
-      title: 'Ministry Not Found - @SDAMTC'
+      title: "Ministry Not Found - @SDAMTC",
     }
   }
 
@@ -498,7 +498,6 @@ Our ministry coordinates various outreach programs that address real needs in ou
   },
 }
 
-
 export default function MinistryDetailPage({ params }: { params: { slug: string } }) {
   const ministry = ministriesData[params.slug as keyof typeof ministriesData]
 
@@ -521,18 +520,26 @@ export default function MinistryDetailPage({ params }: { params: { slug: string 
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-16 px-4 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="bg-white/20 p-4 rounded-full">
-              <IconComponent className="h-12 w-12" />
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.95), rgba(5, 150, 105, 0.95)), url('${ministry.image}')`,
+          }}
+        />
+        <div className="relative max-w-5xl mx-auto text-white">
+          <div className="flex items-center gap-4 mb-6 animate-fade-in">
+            <div className="bg-white/20 p-6 rounded-full backdrop-blur-sm">
+              <IconComponent className="h-16 w-16" />
             </div>
             <div>
-              <Badge className="mb-2 bg-white/20 text-white border-white/30">{ministry.ageGroup}</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold">{ministry.name}</h1>
+              <Badge className="mb-3 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
+                {ministry.ageGroup}
+              </Badge>
+              <h1 className="text-5xl md:text-6xl font-bold">{ministry.name}</h1>
             </div>
           </div>
-          <p className="text-xl opacity-90 max-w-3xl">{ministry.description}</p>
+          <p className="text-2xl opacity-95 max-w-3xl leading-relaxed">{ministry.description}</p>
         </div>
       </section>
 
@@ -592,44 +599,53 @@ export default function MinistryDetailPage({ params }: { params: { slug: string 
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-emerald-50/30">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">About This Ministry</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center">About This Ministry</h2>
           <div className="prose prose-lg max-w-none">
             {ministry.fullDescription.split("\n\n").map((paragraph, index) => (
-              <p key={index} className="mb-4 text-muted-foreground leading-relaxed">
+              <p key={index} className="mb-6 text-muted-foreground leading-relaxed text-lg">
                 {paragraph}
               </p>
             ))}
           </div>
 
-          <Card className="mt-8 bg-emerald-50 border-emerald-200">
+          <Card className="mt-12 bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl">Our Vision</CardTitle>
+              <CardTitle className="text-3xl flex items-center gap-3">
+                <div className="h-2 w-2 rounded-full bg-emerald-600" />
+                Our Vision
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg text-muted-foreground italic">{ministry.vision}</p>
+              <p className="text-xl text-muted-foreground italic leading-relaxed">{ministry.vision}</p>
             </CardContent>
           </Card>
         </div>
       </section>
 
       {/* Activities Section */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Activities & Programs</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">Activities & Programs</h2>
+          <div className="grid md:grid-cols-2 gap-8">
             {ministry.activities.map((activity, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="hover:shadow-2xl transition-all hover:-translate-y-1 border-l-4 border-l-emerald-500"
+              >
                 <CardHeader>
-                  <CardTitle className="text-xl">{activity.name}</CardTitle>
-                  <CardDescription className="flex items-center gap-2 text-emerald-600">
-                    <Calendar className="h-4 w-4" />
+                  <CardTitle className="text-2xl flex items-center gap-2">
+                    <div className="h-3 w-3 rounded-full bg-emerald-500" />
+                    {activity.name}
+                  </CardTitle>
+                  <CardDescription className="flex items-center gap-2 text-emerald-600 text-base">
+                    <Calendar className="h-5 w-5" />
                     {activity.schedule}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{activity.description}</p>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{activity.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -638,15 +654,19 @@ export default function MinistryDetailPage({ params }: { params: { slug: string 
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-emerald-50/30">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">What People Are Saying</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">What People Are Saying</h2>
+          <div className="grid md:grid-cols-2 gap-8">
             {ministry.testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-gradient-to-br from-emerald-50 to-white">
-                <CardContent className="pt-6">
-                  <p className="text-lg italic mb-4 text-muted-foreground">"{testimonial.text}"</p>
-                  <p className="font-semibold text-emerald-600">— {testimonial.name}</p>
+              <Card
+                key={index}
+                className="bg-gradient-to-br from-emerald-50 to-white border-emerald-100 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <CardContent className="pt-8">
+                  <div className="text-6xl text-emerald-200 mb-4">"</div>
+                  <p className="text-xl italic mb-6 text-muted-foreground leading-relaxed">{testimonial.text}</p>
+                  <p className="font-bold text-emerald-600 text-lg">— {testimonial.name}</p>
                 </CardContent>
               </Card>
             ))}
