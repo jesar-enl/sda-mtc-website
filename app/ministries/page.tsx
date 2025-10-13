@@ -61,7 +61,7 @@ export default function MinistriesPage() {
       slug: "youth-ministry",
       description:
         "Empowering young people to grow in faith, develop leadership skills, and make a positive impact in their communities through Bible study, fellowship, and service projects.",
-      icon: Users,
+      icon: "/AY.png",
       leader: "M.G. Jesse Kyambadde",
       leaderEmail: "youth@masakasda.org",
       leaderWhatsApp: "+256700000000",
@@ -79,7 +79,7 @@ export default function MinistriesPage() {
       slug: "childrens-ministry",
       description:
         "Creating a nurturing environment where children can learn about God's love through age-appropriate Bible stories, songs, crafts, and interactive activities.",
-      icon: Baby,
+      icon: "/children-min.png",
       leader: "Mrs. Joy B. Baluku",
       leaderEmail: "children@masakasda.org",
       leaderWhatsApp: "+256700000001",
@@ -97,7 +97,7 @@ export default function MinistriesPage() {
       slug: "womens-ministry",
       description:
         "Supporting women in their spiritual journey through fellowship, Bible study, prayer, and practical life skills while encouraging them to use their gifts in service.",
-      icon: Heart,
+      icon: "/women.png",
       leader: "M.G. Evelyn Jumba",
       leaderEmail: "women@masakasda.org",
       leaderWhatsApp: "+256700000002",
@@ -115,7 +115,7 @@ export default function MinistriesPage() {
       slug: "mens-ministry",
       description:
         "Encouraging men to be spiritual leaders in their homes and communities through Bible study, mentorship, and practical service opportunities.",
-      icon: UserCheck,
+      icon: "/men.png",
       leader: "Eld. James Mukiibi",
       leaderEmail: "men@masakasda.org",
       leaderWhatsApp: "+256700000003",
@@ -133,11 +133,11 @@ export default function MinistriesPage() {
       slug: "music-ministry",
       description:
         "Leading the congregation in worship through inspiring music, developing musical talents, and using the gift of music to glorify God and touch hearts.",
-      icon: Music,
+      icon: "/music.png",
       leader: "M.G. Jesse Kyambadde",
       leaderEmail: "music@masakasda.org",
       leaderWhatsApp: "+256700000004",
-      meetingTime: "Wednesday 6:00 PM",
+      meetingTime: "Friday 7:00 PM",
       ageGroup: "All Ages",
       category: "service",
       activities: ["Choir Practice", "Instrumental Training", "Worship Leading", "Special Music"],
@@ -151,7 +151,7 @@ export default function MinistriesPage() {
       slug: "health-ministry",
       description:
         "Promoting physical, mental, and spiritual wellness through health education, cooking classes, fitness programs, and community health initiatives.",
-      icon: Stethoscope,
+      icon: "/health.png",
       leader: "Dr. Ruth Namukasa",
       leaderEmail: "health@masakasda.org",
       leaderWhatsApp: "+256700000005",
@@ -169,7 +169,7 @@ export default function MinistriesPage() {
       slug: "pathfinder-club",
       description:
         "Developing character and leadership in young people through outdoor activities, skill building, community service, and spiritual growth programs.",
-      icon: TreePine,
+      icon: "/pathfinder.png",
       leader: "Elder Isaac Musinguzi",
       leaderEmail: "pathfinders@masakasda.org",
       leaderWhatsApp: "+256700000006",
@@ -187,7 +187,7 @@ export default function MinistriesPage() {
       slug: "community-outreach",
       description:
         "Serving our local community through practical assistance, evangelism, social programs, and meeting the physical and spiritual needs of our neighbors.",
-      icon: HandHeart,
+      icon: "/community.png",
       leader: "Sister Agnes Nalwoga",
       leaderEmail: "outreach@masakasda.org",
       leaderWhatsApp: "+256700000007",
