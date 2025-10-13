@@ -18,6 +18,7 @@ import {
   Globe,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function MinistriesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
@@ -61,7 +62,7 @@ export default function MinistriesPage() {
       slug: "youth-ministry",
       description:
         "Empowering young people to grow in faith, develop leadership skills, and make a positive impact in their communities through Bible study, fellowship, and service projects.",
-      icon: "/AY.png",
+      logo: "/AY.png",
       leader: "M.G. Jesse Kyambadde",
       leaderEmail: "youth@masakasda.org",
       leaderWhatsApp: "+256700000000",
@@ -71,7 +72,6 @@ export default function MinistriesPage() {
       activities: ["Bible Study", "Community Service", "Youth Camps", "Leadership Training"],
       image: "/ministry-youth.png",
       color: "bg-blue-100 text-blue-800",
-      iconUrl: "https://www.adventist.org/youth-icon.svg",
     },
     {
       id: 2,
@@ -79,7 +79,7 @@ export default function MinistriesPage() {
       slug: "childrens-ministry",
       description:
         "Creating a nurturing environment where children can learn about God's love through age-appropriate Bible stories, songs, crafts, and interactive activities.",
-      icon: "/children-min.png",
+      logo: "/children-min.png",
       leader: "Mrs. Joy B. Baluku",
       leaderEmail: "children@masakasda.org",
       leaderWhatsApp: "+256700000001",
@@ -89,7 +89,6 @@ export default function MinistriesPage() {
       activities: ["Sabbath School", "Children's Church", "VBS", "Story Time"],
       image: "/ministry-children.png",
       color: "bg-green-100 text-green-800",
-      iconUrl: "https://www.adventist.org/children-icon.svg",
     },
     {
       id: 3,
@@ -97,7 +96,7 @@ export default function MinistriesPage() {
       slug: "womens-ministry",
       description:
         "Supporting women in their spiritual journey through fellowship, Bible study, prayer, and practical life skills while encouraging them to use their gifts in service.",
-      icon: "/women.png",
+      logo: "/women.png",
       leader: "M.G. Evelyn Jumba",
       leaderEmail: "women@masakasda.org",
       leaderWhatsApp: "+256700000002",
@@ -107,7 +106,6 @@ export default function MinistriesPage() {
       activities: ["Bible Study", "Prayer Groups", "Health Seminars", "Community Outreach"],
       image: "/ministry-women.png",
       color: "bg-pink-100 text-pink-800",
-      iconUrl: "https://www.adventist.org/women-icon.svg",
     },
     {
       id: 4,
@@ -115,7 +113,7 @@ export default function MinistriesPage() {
       slug: "mens-ministry",
       description:
         "Encouraging men to be spiritual leaders in their homes and communities through Bible study, mentorship, and practical service opportunities.",
-      icon: "/men.png",
+      logo: "/men.png",
       leader: "Eld. James Mukiibi",
       leaderEmail: "men@masakasda.org",
       leaderWhatsApp: "+256700000003",
@@ -125,7 +123,6 @@ export default function MinistriesPage() {
       activities: ["Men's Breakfast", "Bible Study", "Community Projects", "Mentorship"],
       image: "/ministry-men.png",
       color: "bg-indigo-100 text-indigo-800",
-      iconUrl: "https://www.adventist.org/men-icon.svg",
     },
     {
       id: 5,
@@ -133,7 +130,7 @@ export default function MinistriesPage() {
       slug: "music-ministry",
       description:
         "Leading the congregation in worship through inspiring music, developing musical talents, and using the gift of music to glorify God and touch hearts.",
-      icon: "/music.png",
+      logo: "/music.png",
       leader: "M.G. Jesse Kyambadde",
       leaderEmail: "music@masakasda.org",
       leaderWhatsApp: "+256700000004",
@@ -143,7 +140,6 @@ export default function MinistriesPage() {
       activities: ["Choir Practice", "Instrumental Training", "Worship Leading", "Special Music"],
       image: "/ministry-music.png",
       color: "bg-purple-100 text-purple-800",
-      iconUrl: "https://www.adventist.org/music-icon.svg",
     },
     {
       id: 6,
@@ -151,7 +147,7 @@ export default function MinistriesPage() {
       slug: "health-ministry",
       description:
         "Promoting physical, mental, and spiritual wellness through health education, cooking classes, fitness programs, and community health initiatives.",
-      icon: "/health.png",
+      logo: "/health.png",
       leader: "Dr. Ruth Namukasa",
       leaderEmail: "health@masakasda.org",
       leaderWhatsApp: "+256700000005",
@@ -161,7 +157,6 @@ export default function MinistriesPage() {
       activities: ["Health Seminars", "Cooking Classes", "Fitness Programs", "Health Screenings"],
       image: "/ministry-health.png",
       color: "bg-emerald-100 text-emerald-800",
-      iconUrl: "https://www.adventist.org/health-icon.svg",
     },
     {
       id: 7,
@@ -169,7 +164,7 @@ export default function MinistriesPage() {
       slug: "pathfinder-club",
       description:
         "Developing character and leadership in young people through outdoor activities, skill building, community service, and spiritual growth programs.",
-      icon: "/pathfinder.png",
+      logo: "/pathfinder.png",
       leader: "Elder Isaac Musinguzi",
       leaderEmail: "pathfinders@masakasda.org",
       leaderWhatsApp: "+256700000006",
@@ -179,7 +174,6 @@ export default function MinistriesPage() {
       activities: ["Camping", "Honor Classes", "Community Service", "Leadership Training"],
       image: "/ministry-pathfinder.png",
       color: "bg-orange-100 text-orange-800",
-      iconUrl: "https://www.adventist.org/pathfinder-icon.svg",
     },
     {
       id: 8,
@@ -187,7 +181,7 @@ export default function MinistriesPage() {
       slug: "community-outreach",
       description:
         "Serving our local community through practical assistance, evangelism, social programs, and meeting the physical and spiritual needs of our neighbors.",
-      icon: "/community.png",
+      logo: "/community.png",
       leader: "Sister Agnes Nalwoga",
       leaderEmail: "outreach@masakasda.org",
       leaderWhatsApp: "+256700000007",
@@ -197,7 +191,6 @@ export default function MinistriesPage() {
       activities: ["Food Distribution", "Medical Clinics", "Evangelism", "Social Services"],
       image: "/ministry-outreach.png",
       color: "bg-teal-100 text-teal-800",
-      iconUrl: "https://www.adventist.org/outreach-icon.svg",
     },
   ]
 
@@ -257,10 +250,15 @@ export default function MinistriesPage() {
               </div>
               <div className="md:w-1/2 p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  {(() => {
-                    const IconComponent = featuredMinistry.icon
-                    return <IconComponent className="h-10 w-10 text-emerald-600" />
-                  })()}
+                  <div className="relative h-10 w-10">
+                    <Image
+                      src={featuredMinistry.logo}
+                      alt={`${featuredMinistry.name} logo`}
+                      fill
+                      className="object-contain"
+                      sizes="40px"
+                    />
+                  </div>
                   <h3 className="text-3xl font-bold">{featuredMinistry.name}</h3>
                 </div>
                 <p className="text-muted-foreground mb-6 text-lg">{featuredMinistry.description}</p>
@@ -341,7 +339,6 @@ export default function MinistriesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredMinistries.map((ministry) => {
-              const IconComponent = ministry.icon
               return (
                 <Card key={ministry.id} className="overflow-hidden hover:shadow-xl transition-all">
                   <div className="relative">
@@ -352,13 +349,29 @@ export default function MinistriesPage() {
                     />
                     <div className="absolute top-4 right-4">
                       <Badge className={ministry.color}>
-                        <IconComponent className="h-4 w-4 mr-1" />
-                        {ministry.ageGroup}
-                      </Badge>
+                      <div className="relative h-4 w-4 mr-1">
+                        <Image
+                          src={ministry.logo}
+                          alt=""
+                          fill
+                          className="object-contain"
+                          sizes="16px"
+                        />
+                      </div>
+                      {ministry.ageGroup}
+                    </Badge>
                     </div>
                     <div className="absolute bottom-4 left-4 bg-white rounded-full p-3 shadow-lg">
-                      <IconComponent className="h-8 w-8 text-emerald-600" />
+                    <div className="relative h-8 w-8">
+                      <Image
+                        src={ministry.logo}
+                        alt={`${ministry.name} logo`}
+                        fill
+                        className="object-contain"
+                        sizes="32px"
+                      />
                     </div>
+                  </div>
                   </div>
 
                   <CardHeader>
