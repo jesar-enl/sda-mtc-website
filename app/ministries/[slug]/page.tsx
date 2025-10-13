@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -41,7 +42,7 @@ const ministriesData = {
     name: "Youth Ministry",
     description:
       "Empowering young people to grow in faith, develop leadership skills, and make a positive impact in their communities.",
-    icon: Users,
+    logo: "/AY.png",
     leader: "M.G. Jesse Kyambadde",
     leaderEmail: "youth@sdamtc.org",
     leaderPhone: "+256 700 000 001",
@@ -99,7 +100,7 @@ Our ministry focuses on creating a safe and welcoming environment where young pe
     name: "Children's Ministry",
     description:
       "Creating a nurturing environment where children can learn about God's love through age-appropriate activities.",
-    icon: Baby,
+    logo: "/children-min.png",
     leader: "Mrs. Joy B. Baluku",
     leaderEmail: "children@sdamtc.org",
     leaderPhone: "+256 700 000 002",
@@ -156,7 +157,7 @@ Our programs are designed to be age-appropriate, engaging, and biblically sound.
     name: "Women's Ministry",
     description:
       "Supporting women in their spiritual journey through fellowship, Bible study, and practical life skills.",
-    icon: Heart,
+    logo: "/women.png",
     leader: "M.G. Evelyn Jumba",
     leaderEmail: "women@sdamtc.org",
     leaderPhone: "+256 700 000 003",
@@ -213,7 +214,7 @@ Our ministry recognizes the unique challenges and opportunities that women face 
   "mens-ministry": {
     name: "Men's Ministry",
     description: "Encouraging men to be spiritual leaders through Bible study, mentorship, and service.",
-    icon: UserCheck,
+    logo: "/men.png",
     leader: "Eld. James Mukiibi",
     leaderEmail: "men@sdamtc.org",
     leaderPhone: "+256 700 000 004",
@@ -270,7 +271,7 @@ Our ministry recognizes that men face unique challenges and pressures in today's
   "music-ministry": {
     name: "Music Ministry",
     description: "Leading worship through inspiring music and developing musical talents to glorify God.",
-    icon: Music,
+    logo: "/music.png",
     leader: "M.G. Jesse Kyambadde",
     leaderEmail: "music@sdamtc.org",
     leaderPhone: "+256 700 000 005",
@@ -328,7 +329,7 @@ Our ministry provides opportunities for people of all ages and skill levels to u
     name: "Health Ministry",
     description:
       "Promoting physical, mental, and spiritual wellness through education and community health initiatives.",
-    icon: Stethoscope,
+    logo: "/health.png",
     leader: "Dr. Ruth Namukasa",
     leaderEmail: "health@sdamtc.org",
     leaderPhone: "+256 700 000 006",
@@ -385,7 +386,7 @@ Our ministry provides education, resources, and support to help individuals and 
   "pathfinder-club": {
     name: "Pathfinder Club",
     description: "Developing character and leadership in young people through outdoor activities and spiritual growth.",
-    icon: TreePine,
+    logo: "/pathfinder.png",
     leader: "Elder Isaac Musinguzi",
     leaderEmail: "pathfinders@sdamtc.org",
     leaderPhone: "+256 700 000 007",
@@ -442,7 +443,7 @@ Our club follows the international Pathfinder curriculum, which includes honor c
   "community-outreach": {
     name: "Community Outreach",
     description: "Serving our local community through practical assistance and meeting physical and spiritual needs.",
-    icon: HandHeart,
+    logo: "/community.png",
     leader: "Sister Agnes Nalwoga",
     leaderEmail: "outreach@sdamtc.org",
     leaderPhone: "+256 700 000 008",
@@ -505,8 +506,6 @@ export default function MinistryDetailPage({ params }: { params: { slug: string 
     notFound()
   }
 
-  const IconComponent = ministry.icon
-
   return (
     <div className="lg:pr-[14.28%]">
       {/* Back Button */}
@@ -530,7 +529,13 @@ export default function MinistryDetailPage({ params }: { params: { slug: string 
         <div className="relative max-w-5xl mx-auto text-white">
           <div className="flex items-center gap-4 mb-6 animate-fade-in">
             <div className="bg-white/20 p-6 rounded-full backdrop-blur-sm">
-              <IconComponent className="h-16 w-16" />
+              <Image
+                  src={ministry.logo}
+                  alt={`${ministry.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="64px"
+                />
             </div>
             <div>
               <Badge className="mb-3 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
