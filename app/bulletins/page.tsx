@@ -59,7 +59,7 @@ export default function BulletinsPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/church-bulletin-hero.jpg')",
+            backgroundImage: "url('/bulletin-hero-bg.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-purple-900/90" />
@@ -189,12 +189,16 @@ export default function BulletinsPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex gap-2">
-                        <Button size="sm" className="flex-1 bg-indigo-600 hover:bg-indigo-700">
-                          <Download className="h-4 w-4 mr-1" />
-                          Download
+                        <Button size="sm" className="flex-1 bg-indigo-600 hover:bg-indigo-700" asChild>
+                          <a href={bulletin.downloadUrl} download>
+                            <Download className="h-4 w-4 mr-1" />
+                            Download
+                          </a>
                         </Button>
-                        <Button size="sm" variant="outline">
-                          <Eye className="h-4 w-4" />
+                        <Button size="sm" variant="outline" asChild>
+                          <a href={bulletin.previewUrl} target="_blank" rel="noopener noreferrer">
+                            <Eye className="h-4 w-4" />
+                          </a>
                         </Button>
                       </div>
                       <SocialShareButtons

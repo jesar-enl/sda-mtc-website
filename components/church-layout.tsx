@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  { name: "About", href: "/about" }, // Renamed from "About Us" to "About"
   { name: "Livestream", href: "/livestream" },
   { name: "Sermons", href: "/sermons" },
   { name: "Ministries", href: "/ministries" },
@@ -172,7 +172,7 @@ function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-                  About Us
+                  About
                 </Link>
               </li>
               <li>
