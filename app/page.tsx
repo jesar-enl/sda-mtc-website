@@ -76,7 +76,7 @@ export default function HomePage() {
             A Family of Faith, Preparing for Christ's Soon Return
           </p>
           <p className="text-base md:text-lg mb-10 opacity-80 max-w-2xl mx-auto text-pretty">
-            We love to share a <Heart className="h-6 w-6 text-red-400 animate-pulse" /> for Jesus and a commitment to demonstrating and spreading the Good News for HIs transforming love to our neighboring commuinty, Masaka City, and the world at large. 
+            We love to share a love for Jesus and a commitment to demonstrating and spreading the Good News for HIs transforming love to our neighboring commuinty, Masaka City, and the world at large. 
             Join our vibrant community of believers as we worship together, grow in faith, and serve with love. All are welcome to worship and fellowship with us.
           </p>
 
