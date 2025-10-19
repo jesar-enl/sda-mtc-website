@@ -45,7 +45,9 @@ export function ChurchMap() {
             <p className="text-muted-foreground">
               Masaka Town SDA Church
               <br />
-              Nyendo-Masaka Road
+              Plot 2, along Kolijja Street,
+              <br />
+              Just behind Williams Theatre
               <br />
               Masaka, Uganda
             </p>

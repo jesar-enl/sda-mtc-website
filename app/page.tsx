@@ -12,6 +12,33 @@ import { DevotionalPreview } from "@/components/devotional-preview"
 import { SubscriptionPreferences } from "@/components/subscription-preferences"
 import { RSVPModal } from "@/components/rsvp-modal"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Home - Seventh-day Adventist Church Masaka Town",
+  description:
+    "Welcome to Seventh-day Adventist Church Masaka Town. Join our vibrant community for Sabbath worship, fellowship, and spiritual growth. Services every Saturday at 8:30 AM. Everyone is welcome!",
+  keywords: [
+    "SDA Masaka",
+    "Seventh-day Adventist Masaka Town",
+    "Church in Masaka",
+    "Sabbath worship Masaka",
+    "Christian church Uganda",
+    "Bible study Masaka",
+    "Youth ministry Masaka",
+    "Community church",
+  ],
+  openGraph: {
+    title: "Seventh-day Adventist Church Masaka Town - A Family of Faith",
+    description:
+      "Join our vibrant community for Sabbath worship, fellowship, and spiritual growth in Masaka Town, Uganda.",
+    images: ["/modern-welcoming-church.png"],
+    type: "website",
+  },
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function HomePage() {
   const creationSabbathDate = new Date("2025-10-25T08:30:00")
@@ -32,9 +59,9 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto slide-up">
-          <div className="flex items-center justify-center gap-2 mb-6 animate-fade-in">
+          <div className="flex items-center justify-center gap-2 mb-3 animate-fade-in">
             <Heart className="h-6 w-6 text-red-400 animate-pulse" />
-            <p className="text-lg md:text-xl font-medium tracking-wide">Welcome Home</p>
+            <p className="text-lg md:text-xl font-medium tracking-wide">Welcome to</p>
             <Heart className="h-6 w-6 text-red-400 animate-pulse" />
           </div>
 
@@ -49,8 +76,8 @@ export default function HomePage() {
             A Family of Faith, Preparing for Christ's Soon Return
           </p>
           <p className="text-base md:text-lg mb-10 opacity-80 max-w-2xl mx-auto text-pretty">
-            Join our vibrant community of believers as we worship together, grow in faith, and serve with love. Everyone
-            is welcome here.
+            We love to share a <Heart className="h-6 w-6 text-red-400 animate-pulse" /> for Jesus and a commitment to demonstrating and spreading the Good News for HIs transforming love to our neighboring commuinty, Masaka City, and the world at large. 
+            Join our vibrant community of believers as we worship together, grow in faith, and serve with love. All are welcome to worship and fellowship with us.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
