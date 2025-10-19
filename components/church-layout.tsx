@@ -17,6 +17,7 @@ const navigation = [
   { name: "Ministries", href: "/ministries" },
   { name: "Events", href: "/events" },
   { name: "Resources", href: "/resources" },
+  { name: "Bulletins", href: "/bulletins" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
   { name: "Give", href: "/give" },
@@ -197,6 +198,11 @@ function Footer() {
               <li>
                 <Link href="/give" className="text-gray-300 hover:text-white transition-colors">
                   Give
+                </Link>
+              </li>
+              <li>
+                <Link href="/bulletins" className="text-gray-300 hover:text-white transition-colors">
+                  Bulletins
                 </Link>
               </li>
             </ul>

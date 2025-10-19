@@ -1,20 +1,47 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, MapPin, Users, ChevronRight } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Calendar, Clock, MapPin, Users, ChevronRight, Search, Filter, Video, Heart, Book } from "lucide-react"
 
 export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null)
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All")
+  const [currentVerseIndex, setCurrentVerseIndex] = useState(0)
+
+  const bibleVerses = [
+    {
+      text: "For where two or three gather in my name, there am I with them.",
+      reference: "Matthew 18:20",
+    },
+    {
+      text: "Let us not giving up meeting together, as some are in the habit of doing, but encouraging one another.",
+      reference: "Hebrews 10:25",
+    },
+    {
+      text: "They devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer.",
+      reference: "Acts 2:42",
+    },
+  ]
+
+  // Rotate verse every 10 seconds
+  useState(() => {
+    const interval = setInterval(() => {
+      setCurrentVerseIndex((prev) => (prev + 1) % bibleVerses.length)
+    }, 10000)
+    return () => clearInterval(interval)
+  })
 
   const upcomingEvents = [
     {
       id: 1,
       title: "Weekly Sabbath Worship Service",
       date: "2024-01-20",
-      time: "9:00 AM - 12:00 PM",
+      time: "8:30 AM - 6:00 PM",
       location: "Main Sanctuary",
       category: "Worship",
       description:
@@ -23,6 +50,8 @@ export default function EventsPage() {
       expectedAttendees: "200+",
       recurring: true,
       image: "/event-sabbath-worship.png",
+      videoUrl: "https://youtube.com/watch?v=example1",
+      featured: true,
     },
     {
       id: 2,
@@ -96,6 +125,18 @@ export default function EventsPage() {
     },
   ]
 
+  const categories = ["All", "Worship", "Youth", "Community", "Women", "Evangelism"]
+
+  const filteredEvents = upcomingEvents.filter((event) => {
+    const matchesSearch =
+      event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchesCategory = selectedCategory === "All" || event.category === selectedCategory
+    return matchesSearch && matchesCategory
+  })
+
+  const featuredEvent = upcomingEvents.find((e) => e.featured)
+
   const getCategoryColor = (category: string) => {
     switch (category.toLowerCase()) {
       case "worship":
@@ -125,176 +166,267 @@ export default function EventsPage() {
 
   return (
     <div className="lg:pr-[14.28%]">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-sky-400 to-sky-500 text-white">
+      <section className="relative py-32 px-4 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/masaka-church-scenic.jpg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/80" />
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center text-white z-10">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">Gather. Worship. Grow.</h1>
+          <p className="text-xl md:text-2xl opacity-95 mb-8">
+            Join us for inspiring gatherings where faith comes alive and community thrives
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8">
+              <Calendar className="mr-2 h-5 w-5" />
+              View Calendar
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/20 text-lg px-8 bg-transparent"
+            >
+              Plan Your Visit
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Upcoming Events</h1>
-          <p className="text-xl opacity-90">
-            Join us for inspiring gatherings, fellowship, and opportunities to grow in faith
+          <Heart className="h-12 w-12 text-rose-500 mx-auto mb-4" />
+          <h2 className="text-3xl font-bold mb-4">Welcome, Friend!</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Whether you're visiting for the first time or have been part of our family for years, we're thrilled to have
+            you join us. Our events are designed to inspire, connect, and help you grow in your faith journey. Explore
+            what's happening and find your place in our vibrant community!
           </p>
         </div>
       </section>
 
-      {/* Events Calendar */}
+      {featuredEvent && (
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <Badge className="mb-4 text-lg px-4 py-2 bg-gradient-to-r from-rose-500 to-orange-500 text-white">
+                Featured Event
+              </Badge>
+              <h2 className="text-4xl font-bold mb-4">Don't Miss This!</h2>
+            </div>
+            <Card className="overflow-hidden shadow-2xl">
+              <div className="md:flex">
+                <div className="md:w-1/2 relative">
+                  <img
+                    src={featuredEvent.image || "/placeholder.svg"}
+                    alt={featuredEvent.title}
+                    className="w-full h-full object-cover"
+                  />
+                  {featuredEvent.videoUrl && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <Button size="lg" className="rounded-full w-20 h-20 bg-white/90 hover:bg-white">
+                        <Video className="h-10 w-10 text-blue-600" />
+                      </Button>
+                    </div>
+                  )}
+                </div>
+                <div className="md:w-1/2 p-8">
+                  <Badge className="mb-4">{featuredEvent.category}</Badge>
+                  <h3 className="text-3xl font-bold mb-4">{featuredEvent.title}</h3>
+                  <p className="text-muted-foreground mb-6 text-lg">{featuredEvent.description}</p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3">
+                      <Calendar className="h-5 w-5 text-blue-600" />
+                      <span className="font-medium">{formatDate(featuredEvent.date)}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Clock className="h-5 w-5 text-blue-600" />
+                      <span>{featuredEvent.time}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <MapPin className="h-5 w-5 text-blue-600" />
+                      <span>{featuredEvent.location}</span>
+                    </div>
+                  </div>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    onClick={() => setSelectedEvent(selectedEvent === featuredEvent.id ? null : featuredEvent.id)}
+                  >
+                    Learn More
+                    <ChevronRight className="h-4 w-4 ml-1" />
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+      )}
+
+      <section className="py-12 px-4 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <div className="flex-1 relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search events by name or description..."
+                className="pl-10 h-12"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(category)}
+                  className={selectedCategory === category ? "bg-blue-600" : ""}
+                >
+                  <Filter className="h-4 w-4 mr-2" />
+                  {category}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What's Coming Up</h2>
+            <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
             <p className="text-muted-foreground text-lg">
               Mark your calendar and join us for these upcoming events and activities
             </p>
           </div>
 
-          <div className="space-y-6">
-            {upcomingEvents.map((event) => (
-              <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="md:flex">
-                  <div className="md:w-1/3">
-                    <img
-                      src={event.image || "/placeholder.svg"}
-                      alt={event.title}
-                      className="w-full h-48 md:h-full object-cover"
-                    />
+          <div className="grid md:grid-cols-2 gap-6">
+            {filteredEvents.map((event) => (
+              <Card
+                key={event.id}
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="relative h-48">
+                  <img
+                    src={event.image || "/placeholder.svg"}
+                    alt={event.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge className={getCategoryColor(event.category)}>{event.category}</Badge>
                   </div>
-                  <div className="md:w-2/3 p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <Badge className={getCategoryColor(event.category)}>{event.category}</Badge>
-                        {event.recurring && (
-                          <Badge variant="outline" className="text-xs">
-                            Recurring
-                          </Badge>
-                        )}
-                      </div>
+                  {event.recurring && (
+                    <div className="absolute top-4 left-4">
+                      <Badge variant="secondary" className="bg-white/90">
+                        Recurring
+                      </Badge>
                     </div>
-
-                    <h3 className="text-2xl font-bold mb-3">{event.title}</h3>
-                    <p className="text-muted-foreground mb-4 line-clamp-2">{event.description}</p>
-
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sm">
-                          <Calendar className="h-4 w-4 text-sky-500" />
-                          <span className="font-medium">{formatDate(event.date)}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Clock className="h-4 w-4 text-sky-500" />
-                          <span>{event.time}</span>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sm">
-                          <MapPin className="h-4 w-4 text-sky-500" />
-                          <span>{event.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Users className="h-4 w-4 text-sky-500" />
-                          <span>{event.expectedAttendees} expected</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-muted-foreground">
-                        <span className="font-medium">Organized by:</span> {event.organizer}
-                      </div>
-                      <Button
-                        className="bg-sky-500 hover:bg-sky-600"
-                        onClick={() => setSelectedEvent(selectedEvent === event.id ? null : event.id)}
-                      >
-                        {selectedEvent === event.id ? "Show Less" : "Learn More"}
-                        <ChevronRight className="h-4 w-4 ml-1" />
-                      </Button>
-                    </div>
-
-                    {selectedEvent === event.id && (
-                      <div className="mt-6 p-4 bg-muted/30 rounded-lg">
-                        <h4 className="font-semibold mb-2">Event Details</h4>
-                        <p className="text-sm text-muted-foreground mb-4">{event.description}</p>
-                        <div className="flex gap-3">
-                          <Button size="sm" className="bg-sky-500 hover:bg-sky-600">
-                            Register Now
-                          </Button>
-                          <Button size="sm" variant="outline">
-                            Add to Calendar
-                          </Button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  )}
                 </div>
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold mb-3">{event.title}</h3>
+                  <p className="text-muted-foreground mb-4 line-clamp-2">{event.description}</p>
+
+                  <div className="space-y-2 mb-6">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Calendar className="h-4 w-4 text-blue-600" />
+                      <span className="font-medium">{formatDate(event.date)}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Clock className="h-4 w-4 text-blue-600" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <MapPin className="h-4 w-4 text-blue-600" />
+                      <span>{event.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Users className="h-4 w-4 text-blue-600" />
+                      <span>{event.expectedAttendees} expected</span>
+                    </div>
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    className="w-full bg-transparent"
+                    onClick={() => setSelectedEvent(selectedEvent === event.id ? null : event.id)}
+                  >
+                    {selectedEvent === event.id ? "Show Less" : "Learn More"}
+                    <ChevronRight className="h-4 w-4 ml-1" />
+                  </Button>
+
+                  {selectedEvent === event.id && (
+                    <div className="mt-6 p-4 bg-muted/30 rounded-lg animate-fade-in">
+                      <h4 className="font-semibold mb-2">Full Details</h4>
+                      <p className="text-sm text-muted-foreground mb-3">{event.description}</p>
+                      <p className="text-sm">
+                        <span className="font-medium">Organized by:</span> {event.organizer}
+                      </p>
+                    </div>
+                  )}
+                </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Event Categories */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Event Categories</h2>
-            <p className="text-muted-foreground text-lg">
-              Explore different types of events and activities at our church
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="mx-auto mb-4 p-3 bg-blue-100 text-blue-800 rounded-full w-fit">
-                  <Calendar className="h-6 w-6" />
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Never Miss a Moment</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Subscribe to receive personalized event notifications, early registration access, and exclusive updates
+            delivered straight to your inbox.
+          </p>
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+            <CardContent className="p-8">
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <Input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 bg-white/90 border-0 h-12"
+                />
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                  Subscribe
+                </Button>
+              </div>
+              <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full" />
+                  <span>Weekly Updates</span>
                 </div>
-                <CardTitle>Worship Services</CardTitle>
-                <CardDescription>Regular Sabbath worship, prayer meetings, and special services</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="mx-auto mb-4 p-3 bg-green-100 text-green-800 rounded-full w-fit">
-                  <Users className="h-6 w-6" />
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full" />
+                  <span>Early Registration</span>
                 </div>
-                <CardTitle>Fellowship Events</CardTitle>
-                <CardDescription>Social gatherings, potlucks, and community building activities</CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="mx-auto mb-4 p-3 bg-purple-100 text-purple-800 rounded-full w-fit">
-                  <Users className="h-6 w-6" />
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full" />
+                  <span>Special Announcements</span>
                 </div>
-                <CardTitle>Educational Programs</CardTitle>
-                <CardDescription>Bible studies, seminars, workshops, and training sessions</CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* Subscribe to Events */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <Card className="text-center">
-            <CardHeader>
-              <CardTitle className="text-2xl">Stay Informed</CardTitle>
-              <CardDescription>
-                Subscribe to our event notifications to never miss an important church gathering or activity
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#36747D]"
-                />
-                <Button className="bg-sky-500 hover:bg-sky-600">Subscribe</Button>
+          <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200">
+            <CardContent className="p-8 text-center">
+              <div className="mb-4">
+                <div className="inline-block p-3 bg-amber-100 rounded-full">
+                  <Book className="h-6 w-6 text-amber-600" />
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Get weekly event updates and special announcements delivered to your inbox.
-              </p>
+              <blockquote className="text-2xl font-serif italic text-gray-800 mb-4">
+                "{bibleVerses[currentVerseIndex].text}"
+              </blockquote>
+              <p className="text-lg font-semibold text-amber-700">{bibleVerses[currentVerseIndex].reference}</p>
             </CardContent>
           </Card>
         </div>
