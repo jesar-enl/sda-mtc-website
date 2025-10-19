@@ -109,7 +109,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">Visit Us</h3>
-                      <p className="text-muted-foreground">Plot 15, Church Road, Masaka Town, Uganda</p>
+                      <p className="text-muted-foreground">Plot 2, along Kolijja Street, Masaka Town, Uganda</p>
                       <p className="text-sm text-amber-600 mt-1">Near Masaka Town Center</p>
                     </div>
                   </CardContent>
@@ -304,7 +304,7 @@ export default function ContactPage() {
                 <MapPin className="h-6 w-6 text-blue-600" />
               </div>
               <h3 className="font-semibold mb-2">Masaka Town Center</h3>
-              <p className="text-sm text-muted-foreground">2 minutes walk</p>
+              <p className="text-sm text-muted-foreground">5 minutes walk</p>
             </Card>
             <Card className="text-center p-6 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -317,8 +317,8 @@ export default function ContactPage() {
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold mb-2">Masaka Hospital</h3>
-              <p className="text-sm text-muted-foreground">10 minutes walk</p>
+              <h3 className="font-semibold mb-2">Byansi Hospital</h3>
+              <p className="text-sm text-muted-foreground">3 minutes walk</p>
             </Card>
           </div>
 
@@ -339,7 +339,7 @@ export default function ContactPage() {
                   <p className="text-muted-foreground mb-4">
                     Seventh-day Adventist Church Masaka Town
                     <br />
-                    Plot 15, Church Road, Masaka Town, Uganda
+                    Plot 2, along Kolijja Street, Masaka Town, Uganda
                   </p>
                   <Button className="bg-blue-600 hover:bg-blue-700">
                     <MapPin className="h-4 w-4 mr-2" />
@@ -355,11 +355,11 @@ export default function ContactPage() {
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 font-bold">1.</span>
-                <span>From Masaka Town Center, head towards Church Road (2-minute walk)</span>
+                <span>From Masaka Town Center, head towards Byansi Hospital (2-minute walk)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 font-bold">2.</span>
-                <span>Look for the white church building with the SDA symbol on Plot 15</span>
+                <span>Look for the white church building with the SDA symbol on Plot 2, along Kolijja Street</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 font-bold">3.</span>
